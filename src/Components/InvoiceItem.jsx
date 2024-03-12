@@ -18,12 +18,12 @@ export default function InvoiceItem(props) {
       <Table>
         <thead>
           <tr>
-            <th>Consigned Goods</th>
-            <th>Quantity</th>
+            <th>Item</th>
+            <th>Qty</th>
             {/* <th>Additional Qty</th>
             <th>Total Qty</th>
             <th>Paying for Qty</th> */}
-            <th>Price Each</th>
+            <th>Price</th>
             {/* <th>Amount Due</th>
             <th>Qty Returned</th>
             <th>Qty Still Due</th>
@@ -60,7 +60,7 @@ function ItemRow(props) {
           }}
         />
       </td>
-      <td style={{ minWidth: "100px" }}>
+      <td style={{ minWidth: "70px" }}>
         <EditableItem
           onItemizedItemEdit={props.onItemizedItemEdit}
           cellData={{
@@ -73,7 +73,7 @@ function ItemRow(props) {
           }}
         />
       </td>
-      <td style={{ minWidth: "120px" }}>
+      <td style={{ minWidth: "90px" }}>
         <EditableItem
           onItemizedItemEdit={props.onItemizedItemEdit}
           cellData={{

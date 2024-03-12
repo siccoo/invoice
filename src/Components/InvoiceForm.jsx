@@ -4,6 +4,17 @@ import { Form, Row, Col, Card, Button, InputGroup } from "react-bootstrap";
 import InvoiceItem from "./InvoiceItem";
 import InvoiceModal from "./InvoiceModal";
 
+const distributorOptions = [
+  "Nicholas Barnaby",
+  "Distributor 2",
+  "Distributor 3",
+];
+const corporationSupplierOptions = [
+  "Corporation 1",
+  "Corporation 2",
+  "Supplier 1",
+];
+
 const InvoiceForm = () => {
   const [state, setState] = useState({
     isOpen: false,
@@ -163,62 +174,86 @@ const InvoiceForm = () => {
               </div>
 
               <hr className="my-4" />
-              <Row className="mb-5">
+              {/* <Row className="mb-5"> */}
                 <Col>
                   <Form.Label className="fw-bold">
                     Independent Distributor
                   </Form.Label>
-                  <Form.Control
+                  <Form.Select
                     value={state.billFrom}
+                    onChange={(e) =>
+                      setState({ ...state, billFrom: e.target.value })
+                    }
                     className="my-2"
-                    
                     disabled={true}
-                  />
-                  <Form.Control
+                  >
+                    {distributorOptions.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </Form.Select>
+                  {/* <Form.Select
                     value={state.billFromEmail}
+                    onChange={(e) =>
+                      setState({ ...state, billFromEmail: e.target.value })
+                    }
                     className="my-2"
                     disabled={true}
-                  />
-                  <Form.Control
+                  >
+                  </Form.Select>
+                  <Form.Select
                     value={state.billFromAddress}
+                    onChange={(e) =>
+                      setState({ ...state, billFromAddress: e.target.value })
+                    }
                     className="my-2"
                     disabled={true}
-                  />
+                  >
+                  </Form.Select> */}
                 </Col>
                 <Col>
                   <Form.Label className="fw-bold">
                     Corporation/Supplier
                   </Form.Label>
-                  <Form.Control
-                    placeholder="Enter Name"
+                  <Form.Select
+                    placeholder="Select Corporation/Supplier"
                     value={state.billTo}
-                    type="text"
-                    name="billTo"
+                    onChange={(e) =>
+                      setState({ ...state, billTo: e.target.value })
+                    }
                     className="my-2"
-                    onChange={handleChange}
                     autoComplete="name"
                     required={true}
-                  />
-                  <Form.Control
-                    placeholder="Enter Email"
+                  >
+                    {corporationSupplierOptions.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </Form.Select>
+                  {/* <Form.Select
+                    placeholder="Select Email"
                     value={state.billToEmail}
-                    type="email"
-                    name="billToEmail"
+                    onChange={(e) =>
+                      setState({ ...state, billToEmail: e.target.value })
+                    }
                     className="my-2"
-                    onChange={handleChange}
                     autoComplete="email"
-                  />
-                  <Form.Control
-                    placeholder="Enter Address"
+                  >
+                  </Form.Select>
+                  <Form.Select
+                    placeholder="Select Address"
                     value={state.billToAddress}
-                    type="text"
-                    name="billToAddress"
+                    onChange={(e) =>
+                      setState({ ...state, billToAddress: e.target.value })
+                    }
                     className="my-2"
-                    onChange={handleChange}
                     autoComplete="address"
-                  />
+                  >
+                  </Form.Select> */}
                 </Col>
-              </Row>
+              {/* </Row> */}
               <InvoiceItem
                 items={items}
                 onItemizedItemEdit={onItemizedItemEdit}
