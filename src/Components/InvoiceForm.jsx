@@ -143,11 +143,11 @@ const InvoiceForm = () => {
         <Row>
           <Col md={8} lg={9}>
             <Card className="d-flex p-4 p-xl-3 my-3 my-xl-4">
-              <h4 className="text-center mb-4">Consignment Order Form</h4>
+              <h4 className="text-center mb-4">Consignment</h4>
               <div className="d-flex flex-row justify-content-between">
                 <div className="d-flex flex-row mb-3">
                   <div className="mb-2">
-                    <span className="fw-bold">Current&nbsp;Date&nbsp;</span>
+                    <span className="fw-bold">Date&nbsp;</span>
                     <span className="current-date">
                       {new Date().toLocaleDateString()}
                     </span>
@@ -156,7 +156,7 @@ const InvoiceForm = () => {
 
                 <div className="d-flex flex-row mb-3">
                   <div className="mb-2">
-                    <span className="fw-bold">Invoice&nbsp;Number&nbsp;</span>
+                    <span className="fw-bold">Number&nbsp;</span>
                     <span className="current-date">{state.invoiceNumber}</span>
                   </div>
                 </div>
@@ -169,33 +169,19 @@ const InvoiceForm = () => {
                     Independent Distributor
                   </Form.Label>
                   <Form.Control
-                    // placeholder="Enter Name"
                     value={state.billFrom}
-                    // type="text"
-                    // name="billTo"
                     className="my-2"
-                    // onChange={handleChange}
-                    // autoComplete="name"
+                    
                     disabled={true}
                   />
                   <Form.Control
-                    // placeholder="Enter Email"
                     value={state.billFromEmail}
-                    // type="email"
-                    // name="billToEmail"
                     className="my-2"
-                    // onChange={handleChange}
-                    // autoComplete="email"
                     disabled={true}
                   />
                   <Form.Control
-                    // placeholder="Enter Address"
                     value={state.billFromAddress}
-                    // type="text"
-                    // name="billToAddress"
                     className="my-2"
-                    // onChange={handleChange}
-                    // autoComplete="address"
                     disabled={true}
                   />
                 </Col>
