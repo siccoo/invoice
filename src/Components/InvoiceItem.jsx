@@ -43,7 +43,7 @@ export default function InvoiceItem(props) {
         <FiPlusCircle
           className="fw-bold btn"
           onClick={props.onRowAdd}
-          style={{ cursor: "pointer", fontSize: 45, color: "red" }}
+          style={{ cursor: "pointer", fontSize: 55, color: "red" }}
         />
       </div>
     </div>
