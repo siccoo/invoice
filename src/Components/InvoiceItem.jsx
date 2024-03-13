@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
-import { Table, Button } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import EditableItem from "./EditableField";
 import { BiTrash } from "react-icons/bi";
+import { FiPlusCircle } from "react-icons/fi";
 
 export default function InvoiceItem(props) {
-  var itemTable = props.items.map(item => (
+  var itemTable = props.items.map((item) => (
     <ItemRow
       onItemizedItemEdit={props.onItemizedItemEdit}
       item={item}
@@ -35,9 +36,16 @@ export default function InvoiceItem(props) {
         </thead>
         <tbody>{itemTable}</tbody>
       </Table>
-      <Button className="fw-bold" onClick={props.onRowAdd}>
+      {/* <Button className="fw-bold" onClick={props.onRowAdd}>
         Add Item
-      </Button>
+      </Button> */}
+      <div>
+        <FiPlusCircle
+          className="fw-bold btn"
+          onClick={props.onRowAdd}
+          style={{ cursor: "pointer", fontSize: 45, color: "red" }}
+        />
+      </div>
     </div>
   );
 }
@@ -73,7 +81,7 @@ function ItemRow(props) {
           }}
         />
       </td>
-      <td style={{ minWidth: "90px" }}>
+      <td style={{ minWidth: "100px" }}>
         <EditableItem
           onItemizedItemEdit={props.onItemizedItemEdit}
           cellData={{
